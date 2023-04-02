@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>todo list</title>
+<style>
+#container{
+width : 800px;
+background-color : red
+
+}
+
+#todolist{
+border-radius: 5px;
+		background-color: rgb(255, 255, 128);
+		padding: 0px 15px;
+		width: 60%;
+		margin: auto;
+		text-align: center;
+}
+
+	
+#input-group {
+	margin: auto;
+	width: 30%;
+	}
+</style>
+
+
+ 
+ <script>
+	function addItem() {
+	let todo = document.getElementById("item");
+	let list = document.getElementById("todolist");
+	let listitem = document.createElement("li");
+	let xbtn = document.createElement("button");
+	
+	xbtn.className = "btn-close ms-auto";
+	
+	xbtn.onclick = function(e) {
+		let pnode = e.target.parentNode;
+		list.removeChild(pnode);
+	}
+ listitem.innerText = todo.value;
+ listitem.appendChild(xbtn);
+ list.appendChild(listitem);
+ 
+todo.value = "";
+todo.focus();
+}
+</script>
+</head>
+
+<body>
+	<div id="container">
+		<h2>My ToDo App</h2>
+		<hr>
+		<div id="input-group">
+			<input id="item" class="form-control" type="text" placeholder="할일을 입력하세요..">
+		<button type="button" class="btn btn-primary" onclick="addItem()">할일추가
+		</button>
+	</div>
+	<hr>
+	<ul id="todolist" class="list-group"></ul>
+</div>
+</body>
+</html>
