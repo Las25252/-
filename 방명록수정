@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        ?name=value&name=value& => queryString
+    -->
+    <h1>방명록 수정</h1>
+    <form action="write_action.html" method="get">
+      작성자  <input type="text" name="n_writer" value=""><br>
+      이메일 <input type="text" name="n_email" value=""><br>
+      제목 <input type="text" name="n_title" value=""><br>
+      비밀번호 <input type="text" name="n_passward" value=""><br>
+      <textarea name="n_content" cols="30" rows="10"></textarea><br>
+      <input type="submit" value="수정">
+      <input type="reset" value="취소">
+      <button type="button" onclick="window.location.href='list_action.html'">목록</button>
+    </form>
+</body>
+</html>
